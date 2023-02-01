@@ -4,10 +4,13 @@ A simple and user-friendly note taking app built using Flutter and Firebase.
 
 ## Features
 
-- Create, edit and delete notes
-- Secure sign-in with Google
+- Create notes
 - Real-time synchronization with Firebase Firestore
 - User-friendly UI
+
+## Coming soon
+- edit and delete notes
+- Secure sign-in with Google
 
 ## Getting Started
 
