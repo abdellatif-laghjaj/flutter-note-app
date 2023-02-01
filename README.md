@@ -13,21 +13,23 @@ A simple and user-friendly note taking app built using Flutter and Firebase.
 
 1. Clone the repository
 
-$ git clone https://github.com/<your-username>/note-app.git
+```
+    $ git clone https://github.com/abdellatif-laghjaj/flutter-note-app.git
+```
 
 2. Navigate to the project directory
 
 ```
-3. $ cd note-app
+    $ cd note-app
 ```
 
-4. Install dependencies
+3. Install dependencies
 
 ```
-   $ flutter pub get
+    $ flutter pub get
 ```
 
-5. Run the app on an emulator or physical device
+4. Run the app on an emulator or physical device
 
 ```
    $ flutter run
@@ -36,7 +38,7 @@ $ git clone https://github.com/<your-username>/note-app.git
 ## Screenshots
 
 ```
- Coming soon...
+    Coming soon...
 ```
 
 ## Contributions
