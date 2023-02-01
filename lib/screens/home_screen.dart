@@ -54,59 +54,57 @@ class _HomeScreenState extends State<HomeScreen>
             const SizedBox(
               height: 20.0,
             ),
-            Builder(
-              builder: (context) {
-                return StreamBuilder<QuerySnapshot>(
-                  stream:
-                      FirebaseFirestore.instance.collection('notes').snapshots(),
-                  builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-
-                    //if we have data, we will show it
-                    if (snapshot.hasData) {
-                      return GridView(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                        ),
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        children: snapshot.data!.docs
-                            .map((note) => NoteCard(() {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //     builder: (context) => NoteDetails(
-                                  //       doc: doc,
-                                  //     ),
-                                  //   ),
-                                  // );
-                                }, note))
-                            .toList(),
-                      );
-                    }
-
-                    // if we don't have data, we will show a text
-                    return Text(
-                      'No notes yet',
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.0,
-                      ),
+            Builder(builder: (context) {
+              return StreamBuilder<QuerySnapshot>(
+                stream:
+                    FirebaseFirestore.instance.collection('notes').snapshots(),
+                builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
                     );
-                  },
-                );
-              }
-            ),
+                  }
+
+                  //if we have data, we will show it
+                  if (snapshot.hasData) {
+                    return GridView(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: snapshot.data!.docs
+                          .map((note) => NoteCard(() {
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //     builder: (context) => NoteDetails(
+                                //       doc: doc,
+                                //     ),
+                                //   ),
+                                // );
+                              }, note))
+                          .toList(),
+                    );
+                  }
+
+                  // if we don't have data, we will show a text
+                  return Text(
+                    'No notes yet',
+                    style: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 14.0,
+                    ),
+                  );
+                },
+              );
+            }),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Navigator.push(
           //   context,
@@ -115,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen>
           //   ),
           // );
         },
-        child: const Icon(Icons.add),
+        label: const Text('Add note'),
+        icon: const Icon(Icons.add),
       ),
     );
   }
