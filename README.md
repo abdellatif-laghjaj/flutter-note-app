@@ -18,10 +18,13 @@ $ git clone https://github.com/<your-username>/note-app.git
 2. Navigate to the project directory $ cd note-app
 
 3. Install dependencies
-   $ flutter pub get
 
-4. Run the app on an emulator or physical device
-   ```$ flutter run```
+```
+   $ flutter pub get
+```
+
+5. Run the app on an emulator or physical device
+   $ flutter run
 
 ## Screenshots
 
