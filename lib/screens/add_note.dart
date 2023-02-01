@@ -29,12 +29,16 @@ class _AddNoteState extends State<AddNote> {
         actions: [
           IconButton(
             onPressed: () async {
-              await FirebaseFirestore.instance.collection('notes').add({
-                'note_title': _noteTitleController.text,
-                'note_content': _noteContentController.text,
-                'creation_date': date,
-                'color_id': color_id,
-              }).then((value) => Navigator.pop(context));
+              await FirebaseFirestore.instance
+                  .collection('notes')
+                  .add({
+                    'note_title': _noteTitleController.text,
+                    'note_content': _noteContentController.text,
+                    'creation_date': date,
+                    'color_id': color_id,
+                  })
+                  .then((value) => Navigator.pop(context))
+                  .catchError((error) => print('Failed to add note: $error'));
             },
             icon: const Icon(Icons.done_all),
           ),
