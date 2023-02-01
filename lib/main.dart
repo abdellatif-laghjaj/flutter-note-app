@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,10 +33,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    return const MaterialApp(
+      home: HomeScreen(),
     );
   }
 }
