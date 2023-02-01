@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:note_app/screens/note_editor.dart';
 import 'package:note_app/style/app_style.dart';
 import 'package:note_app/widgets/note_card.dart';
 
@@ -76,14 +77,14 @@ class _HomeScreenState extends State<HomeScreen>
                       physics: const NeverScrollableScrollPhysics(),
                       children: snapshot.data!.docs
                           .map((note) => NoteCard(() {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => NoteDetails(
-                                //       doc: doc,
-                                //     ),
-                                //   ),
-                                // );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NoteReaderScreen(
+                                      note,
+                                    ),
+                                  ),
+                                );
                               }, note))
                           .toList(),
                     );
