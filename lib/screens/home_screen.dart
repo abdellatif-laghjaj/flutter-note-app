@@ -5,6 +5,8 @@ import 'package:note_app/screens/note_editor.dart';
 import 'package:note_app/style/app_style.dart';
 import 'package:note_app/widgets/note_card.dart';
 
+import 'note_reader.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
