@@ -36,10 +36,11 @@ $ flutter run
 ```
 
 ## Screenshots
-
-```
-Coming soon...
-```
+<p> 
+<img src="https://user-images.githubusercontent.com/79521157/216146598-b36e4222-2169-445e-b8c1-ca7832879af7.png" width="200" />
+<img src="https://user-images.githubusercontent.com/79521157/216146604-dcebc777-c9b6-4d75-bf5c-dbb3e9fa9774.png" width="200" />
+<img src="https://user-images.githubusercontent.com/79521157/216146607-66c80f89-10da-458d-ba52-bc7a7889d1e5.png" width="200" />
+</p>
 
 ## Contributions
 
