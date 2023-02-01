@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:note_app/screens/note_editor.dart';
+import 'package:note_app/screens/add_note.dart';
 import 'package:note_app/style/app_style.dart';
 import 'package:note_app/widgets/note_card.dart';
 
-import 'note_reader.dart';
+import 'note_details.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => NoteReaderScreen(
+                                    builder: (context) => NoteDetailsScreen(
                                       note,
                                     ),
                                   ),
@@ -109,12 +109,12 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => AddNote(),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddNote(),
+            ),
+          );
         },
         label: const Text('Add note'),
         icon: const Icon(Icons.add),

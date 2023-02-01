@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../style/app_style.dart';
 
-class NoteReaderScreen extends StatefulWidget {
-  NoteReaderScreen(this.note, {Key? key}) : super(key: key);
+class NoteDetailsScreen extends StatefulWidget {
+  NoteDetailsScreen(this.note, {Key? key}) : super(key: key);
   QueryDocumentSnapshot note;
 
   @override
-  State<NoteReaderScreen> createState() => _NoteReaderScreenState();
+  State<NoteDetailsScreen> createState() => _NoteDetailsScreenState();
 }
 
-class _NoteReaderScreenState extends State<NoteReaderScreen>
+class _NoteDetailsScreenState extends State<NoteDetailsScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -56,7 +56,7 @@ class _NoteReaderScreenState extends State<NoteReaderScreen>
               style: AppStyle.dateTitle,
             ),
             const SizedBox(
-              height: 10.0,
+              height: 18.0,
             ),
             Text(
               widget.note['note_content'],
