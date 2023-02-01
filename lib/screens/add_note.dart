@@ -12,6 +12,8 @@ class AddNote extends StatefulWidget {
 
 class _AddNoteState extends State<AddNote> {
   int color_id = Random().nextInt(AppStyle.cardsColor.length);
+  TextEditingController _noteTitleController = TextEditingController();
+  TextEditingController _noteContentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +39,10 @@ class _AddNoteState extends State<AddNote> {
               height: 10.0,
             ),
             TextField(
+              controller: _noteTitleController,
               decoration: const InputDecoration(
                 hintText: 'Enter title',
+                border: InputBorder.none,
               ),
             ),
             const SizedBox(
@@ -52,8 +56,10 @@ class _AddNoteState extends State<AddNote> {
               height: 10.0,
             ),
             TextField(
+              controller: _noteContentController,
               decoration: const InputDecoration(
                 hintText: 'Enter content',
+                border: InputBorder.none,
               ),
             ),
             const SizedBox(
