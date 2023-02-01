@@ -23,7 +23,7 @@ $ git clone https://github.com/abdellatif-laghjaj/flutter-note-app.git
 2. Navigate to the project directory
 
 ```
-$ cd note-app
+$ cd flutter-note-app
 ```
 
 3. Install dependencies
