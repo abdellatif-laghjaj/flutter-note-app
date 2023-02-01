@@ -9,7 +9,7 @@ A simple and user-friendly note taking app built using Flutter and Firebase.
 - User-friendly UI
 
 ## Coming soon
-- edit and delete notes
+- Edit and delete notes
 - Secure sign-in with Google
 
 ## Getting Started
