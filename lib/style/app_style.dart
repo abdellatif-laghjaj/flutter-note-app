@@ -37,6 +37,7 @@ class AppStyle {
 
   static TextStyle dateTitle = GoogleFonts.poppins(
     fontSize: 13.0,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.italic,
   );
 }

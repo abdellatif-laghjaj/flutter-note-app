@@ -60,9 +60,6 @@ class _HomeScreenState extends State<HomeScreen>
                   stream:
                       FirebaseFirestore.instance.collection('notes').snapshots(),
                   builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                    /*checking the connection state,
-                      if we still loading the data,
-                      we will show a circular progress indicator*/
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const Center(
                         child: CircularProgressIndicator(),
@@ -75,16 +72,21 @@ class _HomeScreenState extends State<HomeScreen>
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
                         ),
-                        children: [
-                          ListView(
-                            children: snapshot.data!.docs
-                                .map((note) => NoteCard(() => {}, note))
-                                .toList(),
-                          ),
-                        ],
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: snapshot.data!.docs
+                            .map((note) => NoteCard(() {
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //     builder: (context) => NoteDetails(
+                                  //       doc: doc,
+                                  //     ),
+                                  //   ),
+                                  // );
+                                }, note))
+                            .toList(),
                       );
                     }
 
@@ -103,6 +105,17 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => AddNote(),
+          //   ),
+          // );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

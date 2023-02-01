@@ -17,21 +17,21 @@ Widget NoteCard(Function()? onTap, QueryDocumentSnapshot doc) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            doc['title'],
+            doc['note_title'],
             style: AppStyle.mainTitle,
           ),
           const SizedBox(
             height: 10.0,
           ),
           Text(
-            doc['content'],
+            doc['note_content'],
             style: AppStyle.mainContent,
           ),
           const SizedBox(
             height: 10.0,
           ),
           Text(
-            doc['date'],
+            doc['creation_date'],
             style: AppStyle.dateTitle,
           ),
         ],
