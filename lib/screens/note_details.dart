@@ -35,7 +35,15 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen>
       appBar: AppBar(
         backgroundColor: AppStyle.cardsColor[color_id],
         elevation: 0.0,
-        title: Text(widget.note['note_title']),
+        title: Text(
+          widget.note['note_title'],
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         centerTitle: true,
       ),
       body: Padding(

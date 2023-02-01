@@ -24,7 +24,15 @@ class _AddNoteState extends State<AddNote> {
       appBar: AppBar(
         backgroundColor: AppStyle.cardsColor[color_id],
         elevation: 0.0,
-        title: const Text('Add new note'),
+        title: const Text(
+          'Add new note',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
         centerTitle: true,
         actions: [
           IconButton(

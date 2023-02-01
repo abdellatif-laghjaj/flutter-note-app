@@ -12,16 +12,16 @@ class AppStyle {
   //set up cards colors
   static List<Color> cardsColor = [
     Colors.white,
-    Colors.red.shade300,
-    Colors.green.shade300,
-    Colors.blue.shade300,
-    Colors.yellow.shade300,
-    Colors.purple.shade300,
-    Colors.orange.shade300,
-    Colors.pink.shade300,
-    Colors.teal.shade300,
-    Colors.cyan.shade300,
-    Colors.indigo.shade300,
+    Colors.red.shade200,
+    Colors.green.shade200,
+    Colors.blue.shade200,
+    Colors.yellow.shade200,
+    Colors.purple.shade200,
+    Colors.orange.shade200,
+    Colors.pink.shade200,
+    Colors.teal.shade200,
+    Colors.cyan.shade200,
+    Colors.indigo.shade200,
   ];
 
   //set up text styles
